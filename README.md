@@ -5,7 +5,7 @@ marketing sub-agents — with the safety rails that keep parallel agents from st
 on each other and the verification discipline that keeps their output trustworthy and
 compliant.
 
-It is the **marketing-team sibling of [`agent-swarm`](../SKILL.md)**: the same
+It is the **marketing-team sibling of `agent-swarm`**: the same
 battle-tested five-phase orchestration architecture and isolation invariants, with
 the software-engineering business logic swapped for a marketing org. Where agent-swarm
 runs builders + a verifier across code workstreams, marketing-swarm runs a CMO over
@@ -108,6 +108,9 @@ and looking for `marketing-swarm`). The skill activates on triggers like
 *"marketing swarm"*, *"run a campaign swarm"*, *"CMO swarm"*, *"campaign team"*, or
 *"orchestrate a marketing team"*.
 
+**New here?** [`QUICKSTART.md`](QUICKSTART.md) takes you from install to a finished,
+verified campaign (that stops at the publish gate) in about ten minutes.
+
 To update later:
 
 ```bash
@@ -116,10 +119,11 @@ cd ~/.claude/skills/marketing-swarm && git pull
 
 ## Improving it
 
-Edit `SKILL.md` and commit — the doc *is* the skill. See
-[`IMPROVEMENTS.md`](IMPROVEMENTS.md) for a prioritized backlog and
-[`CHANGELOG.md`](CHANGELOG.md) for released versions. The skill also improves itself
-across campaigns — see "Self-learning across campaigns" above.
+Edit `SKILL.md` and commit — the doc *is* the skill. [`CONTRIBUTING.md`](CONTRIBUTING.md)
+covers the dev loop, the roster↔agents↔compliance consistency rule, and the
+conventions that carry weight. See [`IMPROVEMENTS.md`](IMPROVEMENTS.md) for a
+prioritized backlog and [`CHANGELOG.md`](CHANGELOG.md) for released versions. The skill
+also improves itself across campaigns — see "Self-learning across campaigns" above.
 
 ## License
 
