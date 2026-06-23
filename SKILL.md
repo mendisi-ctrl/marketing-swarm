@@ -1,6 +1,6 @@
 ---
 name: marketing-swarm
-version: 1.0.0
+version: 1.1.0
 description: |
   Multi-agent marketing-team operations protocol for autonomous campaign sessions:
   a CMO lead session that runs council-reviewed campaign planning, persistent
@@ -136,8 +136,14 @@ instead of improvising:
   polling) → `/loop` with a read-only query, not ad-hoc reminders.
 - Phase-1 exploration (market/competitor/audience research) → `deep-research`.
 - Creative/visual deliverables → the Figma skills (`figma-use`,
-  `figma-generate-design`) and image-generation MCP for the Art Director and
-  Video/Motion subagents.
+  `figma-generate-design`) for layout/design-system work, and **Gemini for image
+  generation** for the Art Director and Video/Motion subagents: the **`gemini` CLI**
+  (headless `-p`) is the brand-aware brain — it constructs and critiques every image
+  prompt against the visual brand lock (below) and runs the brand-conformance pass —
+  and the **nano-banana Gemini image MCP** (`nanobanana_generate_image` /
+  `nanobanana_edit_image`) is the pixel generator/editor. The `gemini` CLI has no
+  one-shot image flag; it reasons and orchestrates, nano-banana renders. **No image is
+  generated before the visual brand lock exists and is signed off** (see Phase 2).
 - *(Placeholder)* Campaign north-star tracking → `/goal`, if installed — the CMO
   uses it to set and track the campaign's success metric against the brief. Not a
   v1.0.0 dependency; slot it in once available.
@@ -155,6 +161,22 @@ instead of improvising:
   workstreams. The only sanctioned overlap is the message house run through the
   sequential shared-file handoff (Phase 3), which the lead must justify and which
   still permits just one writer at a time. Show the map before launching the wave.
+- **Visual brand lock before any generation (the imagery analogue of the message
+  house)**: imagery is the second sanctioned shared dependency. Before any wave that
+  generates or embeds an image runs, the Brand & Creative Director produces and signs
+  off `creative/brand-lock.md` — palette, type, logo usage, imagery style/mood, the
+  do/don't list, the per-channel asset spec, and the **reusable Gemini image-prompt
+  preamble** (the brand-style string every generation is seeded with). It is derived
+  from the brand guide (re-read at source, never paraphrased) and is the one approved
+  visual source every other deliverable derives imagery from — exactly as the message
+  house is for copy. **No image is generated until the brand lock exists and is
+  signed.** Ownership stays disjoint: the design role *owns* the brand lock and every
+  standalone asset in `assets/`; for imagery embedded in another member's deliverable
+  (a blog hero, a landing hero, an email header, a social card) the design role
+  **gates — reviews, does not edit**. The owning member generates against the locked
+  preamble and the design role signs the image off pre-publish (V-08); it never edits
+  a peer's file. This makes the design role the single authority over all imagery
+  without breaking strict disjoint ownership.
 - **Heterogeneous waves**: don't launch N copywriters; launch builders + one
   verifier agent in the SAME wave. The verifier (the Analytics & Ops lead) writes
   the Tier-1 acceptance checks (keyword/UTM/link/word-count/spec commands) and stages
@@ -262,7 +284,8 @@ against — don't run a second, conflicting gate.
   board** before touching any deliverable.
 - Agents commit (with the session trailer) but NEVER publish and NEVER push.
 - The lead session integrates: cherry-pick team commits onto the target branch in
-  dependency order (message house first, then everything that derives from it),
+  dependency order (the message house and the visual brand lock first, then
+  everything that derives from them),
   re-run verification on the merged tree (Tier-1 commands + Tier-2 checklist
   sign-off), single push, one PR. **Publishing live is a separate owner gate** (see
   the autonomy contract) — integration is internal; publication is not.
@@ -540,7 +563,7 @@ When this skill is triggered:
    and returns to the lead before integration; clear the findings against the source.
    If an agent underperforms, apply the Phase 3 escalation ladder (re-task → re-scope
    → fire & replace, then escalate) and re-run the critic until clean.
-7. Integrate in dependency order (message house first), verify on the merged tree
+7. Integrate in dependency order (message house + visual brand lock first), verify on the merged tree
    (Tier-1 commands + Tier-2 sign-off), push once, post lead-generated evidence. On
    any failure, follow Phase 3's failure-handling path rather than pushing.
 8. **The publish/spend gate is the owner's** — draft the ready-to-publish artifacts

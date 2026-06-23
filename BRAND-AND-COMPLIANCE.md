@@ -16,6 +16,7 @@ re-inventing commands or criteria.
 - Voice & tone checklist (Tier-2; Brand Guardian gates)
 - Compliance checklist (Tier-2 + grep-able subset; Legal/Compliance gates)
 - Channel asset-spec table (mixed; specs are machine-checkable)
+- Visual brand lock + image-gen tooling (Gemini; the imagery analogue of the message house)
 - Claims-substantiation requirement (the artifact the Legal gate consumes)
 
 ---
@@ -60,6 +61,13 @@ exit code + output the lead reads directly — never an agent's "it passed" stri
 - **T1-14 — asset spec.** Image/video matches the channel spec (dimensions, aspect,
   size). Check: `identify -format '%wx%h' asset.png` (or `ffprobe` for video) equals
   the spec-table value for that channel.
+- **T1-15 — image registered against the brand lock.** Every generated/embedded image
+  is listed in `assets/manifest.md` with a `brand-lock:` ref (the signed
+  `creative/brand-lock.md`), so no orphan image ships ungated. Pre-req: a signed
+  `creative/brand-lock.md` exists. Check: `test -f creative/brand-lock.md && grep -q '^signed-by:' creative/brand-lock.md`
+  (lock exists + signed), and every asset referenced in a deliverable has a row in
+  `assets/manifest.md` carrying `brand-lock:` (grep the embedded asset paths, assert
+  each appears in the manifest with the ref; fail if any is unregistered).
 
 These are illustrative — tune the keyword, bands, banned list, and disclaimer text to
 the campaign brief and brand guide. The verifier authors the concrete commands while
@@ -84,6 +92,13 @@ Holistic voice is a reviewer judgement; the mechanical parts are pushed to Tier-
   warm-not-casual). (Judgement.)
 - **V-07 — consistency with the message house.** Claims and framing derive from
   `positioning/messaging.md`, not invented per-deliverable. (Judgement + diff check.)
+- **V-08 — visual brand-lock conformance.** Every image (standalone OR embedded in
+  another member's deliverable) conforms to the signed `creative/brand-lock.md` —
+  palette, type, logo usage, imagery style/mood, do/don't — and was generated from its
+  Gemini preamble. The **Brand & Creative Director is the imagery gate**: it signs off
+  every image campaign-wide before publish (reviews, never edits a peer's file).
+  Manifest-registration is Tier-1 (T1-15); whether the pixels actually match the lock
+  is this Tier-2 judgement. No image ships without a V-08 sign-off.
 
 ---
 
@@ -125,6 +140,36 @@ Illustrative; replace with the campaign's real channel matrix.
 | Instagram | Feed image | 1080×1080 | 1:1 | 8 MB |
 | Blog | Hero image | 1600×840 | 1.91:1 | 500 KB |
 | Email | Header image | 600×200 | 3:1 | 200 KB |
+
+---
+
+## Visual brand lock + image-gen tooling (the imagery analogue of the message house)
+
+Every campaign that produces or embeds imagery first produces a signed
+`creative/brand-lock.md` — the one approved visual source every image derives from,
+exactly as `positioning/messaging.md` is for copy. Owned and signed by the Brand &
+Creative Director **before any generation wave runs**; it gates all imagery
+campaign-wide (review, never edit a peer's file). Contents:
+
+```
+| field | what it pins |
+|---|---|
+| palette        | brand colors + hex, allowed/forbidden combinations |
+| type           | typefaces, weights, sizing scale |
+| logo usage     | clear-space, min size, do/don't placements |
+| imagery style  | mood, subject, composition, photographic vs illustrated |
+| do / don't     | concrete examples of on- and off-brand imagery |
+| channel spec   | per-channel dimensions/aspect/size (→ the asset-spec table, T1-14) |
+| gemini preamble| the reusable brand-style prompt string every generation is seeded with |
+| signed-by:     | the Brand & Creative Director's sign-off line (T1-15 pre-req) |
+```
+
+**Image-gen tooling — Gemini.** The `gemini` CLI (headless `-p`) is the brand-aware
+brain: it builds/critiques each prompt against the brand lock and runs the
+brand-conformance pass. It has **no one-shot image flag** — the pixels come from the
+nano-banana Gemini image MCP (`nanobanana_generate_image` / `nanobanana_edit_image`).
+Both are Gemini. No image is generated before `creative/brand-lock.md` is signed.
+Registration is enforced by **T1-15**; pixel-level conformance by **V-08**.
 
 ---
 

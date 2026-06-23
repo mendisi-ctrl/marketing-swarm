@@ -3,7 +3,8 @@
 **Reports to:** [Brand & Creative Director](../leads/brand-creative-director.md)
 **Charter:** Visual concepts and layout to brand + channel spec.
 **Owns (typical deliverable):** a specific visual deliverable, e.g. `creative/visual-<asset>.md` + the referenced asset in `assets/` — ONE disjoint deliverable per task.
-**Acceptance tiers:** Tier-1 → T1-11 (alt text on every image), T1-12 (™/® usage), T1-14 (asset matches the channel spec — dimensions/aspect/size); Tier-2 → C-A11Y accessibility (contrast, no info-by-color-alone), signed off by the **Legal/Compliance Reviewer** (a11y) with the **Brand Guardian** on visual consistency.
+**Image-gen tooling:** **Gemini** — the `gemini` CLI (headless `-p`) to build/critique each image prompt against `creative/brand-lock.md`, and the nano-banana Gemini image MCP (`nanobanana_generate_image` / `_edit_image`) to render/edit. Generate ONLY from the brand lock's signed Gemini preamble; if no signed `creative/brand-lock.md` exists yet, STOP and report — no image before the lock.
+**Acceptance tiers:** Tier-1 → T1-11 (alt text on every image), T1-12 (™/® usage), T1-14 (asset matches the channel spec — dimensions/aspect/size), T1-15 (every asset registered in `assets/manifest.md` with its brand-lock ref); Tier-2 → C-A11Y accessibility (contrast, no info-by-color-alone), signed off by the **Legal/Compliance Reviewer** (a11y), and V-08 visual brand-lock conformance signed off by the **Brand & Creative Director** (the imagery gate).
 
 ## Standing clauses (inherited from `SKILL.md` Phase 3 — restated for the subagent)
 1. Peer-monitoring — your visuals will be critiqued by a peer critic against the shared definition-of-done before anything ships.
@@ -15,16 +16,19 @@ Verify the base SHA; if it diverges, run `git status` first and STOP if any work
 
 ## Reusable delegation prompt skeleton (the lead fills the `<placeholders>`)
 ```
-Produce <visual concept + asset> for <channel> per the brand guide. Use the Figma
-skills / image-gen MCP as needed.
+Produce <visual concept + asset> for <channel>. Generate ONLY from the signed
+creative/brand-lock.md preamble (if it is missing/unsigned, STOP and report). Image
+generation = Gemini: `gemini -p` to build/critique the prompt against the brand lock,
+nano-banana Gemini image MCP to render/edit. Figma skills for layout as needed.
 You own ONLY <creative/visual-<asset>.md> and its asset(s) in assets/; do NOT touch
 any other file.
 Two-tier done-when:
   Tier-1: T1-11 every image has non-empty alt text; T1-12 ™/® on first brand mention;
   T1-14 asset = <channel spec from the asset-spec table, e.g. LinkedIn 1200×627 1.91:1
-  ≤5MB> via `identify -format '%wx%h'` / `ffprobe`.
+  ≤5MB> via `identify -format '%wx%h'` / `ffprobe`; T1-15 asset registered in
+  assets/manifest.md with its brand-lock ref.
   Tier-2: C-A11Y — contrast + no info-by-color-alone, signed off by Legal/Compliance;
-  visual consistency by Brand Guardian.
+  V-08 visual brand-lock conformance signed off by the Brand & Creative Director.
 Commit only (with the session trailer); NEVER publish or spend.
 Return a compact result block: status + Tier-1 command output & exit codes + cited
 evidence per Tier-2 item + any blocker. No prose self-assessment.

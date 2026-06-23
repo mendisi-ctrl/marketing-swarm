@@ -38,11 +38,16 @@ T2 = checklist-gated reviewer sign-off).
 ## Team leads (persistent specialists) and their members (subagents)
 
 ### 1. Brand & Creative Director — `agents/leads/brand-creative-director.md`
-Guards voice, visual identity, and creative coherence across every deliverable.
+Guards voice, visual identity, and creative coherence across every deliverable. Owns
+the **visual brand lock** (`creative/brand-lock.md`, signed before any image is
+generated) and is the **campaign-wide imagery gate** — signs off every image, incl.
+those embedded in other members' deliverables (reviews, never edits). Image gen =
+**Gemini** (`gemini` CLI as brand brain + nano-banana image MCP as generator).
 - **Copywriter** — `agents/members/copywriter.md` — headline/body copy on-brief and
   on-voice. *(T1-01,02,04,08; T2 V-*)*
 - **Art Director / Designer** — `agents/members/art-director.md` — visual concepts
-  and layout to brand + channel spec. *(T1-11,12,14; T2 C-A11Y)*
+  and layout to brand + channel spec; generates via Gemini from the signed brand lock.
+  *(T1-11,12,14,15; T2 C-A11Y, V-08)*
 - **Video / Motion Designer** — `agents/members/video-motion-designer.md` — motion/
   video scripts and storyboards. *(T1-14; T2 V-*, C-A11Y)*
 - **Brand Voice Editor** — `agents/members/brand-voice-editor.md` — line-edits every
