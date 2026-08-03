@@ -132,7 +132,7 @@ Updates are incremental deltas, never a monolithic rewrite.
 - **play:** When delegating any subagent task, make the brief self-contained with
   four mandatory components — objective, output format, tools/sources, task
   boundaries — and end every agent's turn with a written handoff summary to the team
-  board. When a shared artifact (message house, brand lock) crosses a handoff,
+  board (the board as destination is a workflow derivation, not sourced). When a shared artifact (message house, brand lock) crosses a handoff,
   validate it against a versioned schema as a Tier-1 check.
 - **trigger/symptom:** an agent returns work in the wrong shape or scope; a
   downstream deliverable silently diverges from the message house after an
