@@ -22,3 +22,4 @@ never an agent self-report copied verbatim (anti-poisoning, untrusted-input boun
 ## Entries
 
 - 2026-06-22 | bootstrap | LEARNING-LOG.md | audit trail created with marketing-swarm v1.0.0; the playbook seeds P1 and P2 in `staging`. First real autonomous entries land once the loop runs on a downstream campaign and a play recurs across a second independent campaign + passes a verify-gate. | marketing-swarm v1.0.0 build | (initial commit)
+- 2026-08-03 | bootstrap | loop/* + research/* | weekly internet-research self-improvement loop added (v1.2.0): 6-lens Friday pipeline, propose-only core tier, research/-fenced auto-commit, checks.sh self-heal gate; week-0 digest seeded from an 8-agent research workflow with adversarial citation-verification | council review (10 amendments adopted: no-Bash headless, propose-only core, fenced commits, no source quotas) + approved plan | (SHA recorded at merge)
