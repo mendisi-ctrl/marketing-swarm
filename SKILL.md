@@ -314,6 +314,17 @@ against — don't run a second, conflicting gate.
   persona's sign-off cites specific evidence (the source line backing a claim, the
   checklist item), not a vibe. Post a Gate-1 evidence note on every integration PR
   with a timestamp, and re-check it right before the publish handoff.
+- **Tamper-resistant gates**: Tier-1 check definitions (the commands and the
+  `BRAND-AND-COMPLIANCE.md` catalogue) are lead-owned and read-only to deliverable
+  agents — an agent that edits, weakens, or routes around a check fails its
+  delegation outright, because gaming an acceptance check predicts broader
+  misbehavior, not an isolated shortcut. Tier-2 reviewers explicitly audit for
+  letter-not-spirit Tier-1 passes (the stub that technically contains the keyword,
+  the disclaimer buried in alt text). A reviewer agent's verdicts may hard-block
+  only after they have been calibrated against the owner's actual accept/reject
+  record — until then its rejections are advisory flags the lead adjudicates. And
+  standing rule in both directions: anything deterministically expressible moves
+  DOWN from Tier-2 judgment into a Tier-1 command.
 
 ### Shared-file collaboration (bounded exception to disjoint ownership)
 The rule: *sub-agents never concurrently edit the same file. Keep strict disjoint
