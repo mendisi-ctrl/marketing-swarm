@@ -100,7 +100,7 @@ Cloners install the hook themselves — a repo cannot install one for you.
 Clone directly into your Claude Code skills directory:
 
 ```bash
-git clone <this-repo-url> ~/.claude/skills/marketing-swarm
+git clone https://github.com/mendisi-ctrl/marketing-swarm.git ~/.claude/skills/marketing-swarm
 ```
 
 Claude Code will auto-discover it (live — no restart needed; confirm by typing `/`

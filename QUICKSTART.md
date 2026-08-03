@@ -9,7 +9,7 @@ play out on one campaign read [`example/WALKTHROUGH.md`](example/WALKTHROUGH.md)
 Clone into your Claude Code skills directory:
 
 ```bash
-git clone <this-repo-url> ~/.claude/skills/marketing-swarm
+git clone https://github.com/mendisi-ctrl/marketing-swarm.git ~/.claude/skills/marketing-swarm
 ```
 
 Claude Code auto-discovers it live (no restart). Confirm by typing `/` and looking for
