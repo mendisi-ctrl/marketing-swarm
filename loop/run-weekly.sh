@@ -136,6 +136,13 @@ mkdir -p "$(dirname "$LOG")"
     exit 0
   fi
 
+  # Same-date guard (suggested by the loop's own first run): a retry or manual
+  # kickstart on a day that already has a digest must not clobber it.
+  if [[ -f "$REPO/research/digests/${TODAY}.md" ]]; then
+    echo "! infra: digest for ${TODAY} already exists — skipping (no clobber)"
+    exit 0
+  fi
+
   PRE_SHA="$(git -C "$REPO" rev-parse HEAD)"
   echo "→ pre-run SHA: $PRE_SHA"
 
