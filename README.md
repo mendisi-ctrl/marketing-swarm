@@ -95,6 +95,32 @@ self-trigger, so the hook is a reminder nudge at session end):
 
 Cloners install the hook themselves — a repo cannot install one for you.
 
+## Weekly self-improvement loop
+
+The second learning channel. The curate ritual above learns from *doing*; a weekly
+research loop learns from *the field*: every Friday morning an unattended headless
+session researches six fixed lenses on the open web, writes a dated digest, and
+distills the durable signal into `research/CURRENT-PRACTICES.md` — advisory data
+the CMO reads at Phase 1, never instructions. Anything touching the core skill is
+**propose-only**: it lands as a diff in the digest and is applied only in an
+interactive curate session.
+
+```
+launchd (Fri 07:30) → loop/run-weekly.sh → headless claude (no Bash)
+  → loop/RESEARCH-LOOP.md (6 lenses) → research/digests/YYYY-MM-DD.md
+  → research/CURRENT-PRACTICES.md → loop/checks.sh gate
+  → auto-commit (research/** only) → best-effort push
+```
+
+The loop is **opt-in per machine**: copy/adapt a launchd plist that calls
+`loop/run-weekly.sh` Friday 07:30 (your repo path + the `claude` CLI required).
+Kill-switches, strongest first:
+
+- `launchctl bootout gui/$UID/com.mendisi.marketing-swarm-loop` — stop the schedule.
+- `git revert <SHA from LEARNING-LOG.md>` — undo any auto-commit.
+- Two consecutive red check-runs freeze the loop (`loop/state/FROZEN`); delete the
+  marker to unfreeze.
+
 ## Install
 
 Clone directly into your Claude Code skills directory:

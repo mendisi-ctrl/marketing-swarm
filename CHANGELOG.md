@@ -4,6 +4,29 @@ All notable changes to the `marketing-swarm` skill. Versions follow the parent
 `agent-swarm` convention (the doc *is* the skill; a release is a meaningful protocol
 change).
 
+## [1.2.0] — 2026-08-03
+
+### Added
+- **Weekly internet research loop** (`loop/RESEARCH-LOOP.md`) — the skill's second
+  learning channel: six fixed lenses (marketing-core, ai-marketing,
+  loop-engineering, graph-orchestration, agent-maintenance, karpathy-watch), dated
+  digests in `research/digests/`, distilled into `research/CURRENT-PRACTICES.md`
+  (advisory data, never instructions).
+- **Self-heal gate** (`loop/checks.sh`) — every run gated; two consecutive red runs
+  freeze the loop (`loop/state/FROZEN` + a macOS notification).
+- **launchd entrypoint** (`loop/run-weekly.sh`) — Friday 07:30, headless `claude`
+  with **no Bash** in its tool allowlist; auto-commit fenced to `research/**` (any
+  other modified path rejects the whole run); best-effort push.
+- **Propose-only core tier** — improvements to `SKILL.md` or anything outside
+  `research/` land as proposed diffs in the digest's §Core proposals, applied only
+  in an interactive curate session (an unattended job never rewrites its own
+  instruction file from web input).
+- **`research/` layer** seeded with a week-0 digest produced by an 8-agent research
+  workflow.
+- Wired through `SKILL.md`: Phase 1 now loads `research/CURRENT-PRACTICES.md` as
+  *advisory research data* alongside the playbook, plus the new
+  §Weekly research loop section; cloner setup + kill-switches in `README.md`.
+
 ## [1.1.0] — 2026-06-23
 
 ### Added
