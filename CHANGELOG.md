@@ -4,6 +4,26 @@ All notable changes to the `marketing-swarm` skill. Versions follow the parent
 `agent-swarm` convention (the doc *is* the skill; a release is a meaningful protocol
 change).
 
+## [1.4.0] — 2026-08-03
+
+Community learning channel — opt-in, artifact-level, human-gated. No telemetry.
+
+### Added
+- **Curate step 7 — Contribute (opt-in, clones only)**: after a cloner's campaign,
+  the curate ritual asks once whether to share the run's sanitized play(s)
+  upstream; declining shares nothing. Play reports carry procedural play text, a
+  held/failed/neutral verdict, and a one-line sanitized context — never campaign
+  names, numbers, claims, or personal data.
+- **Play-report issue template** (`.github/ISSUE_TEMPLATE/play-report.md`) with a
+  no-confidential-content confirmation and the external-input disclosure.
+- **Community origins**: a maintainer-verified play report counts as one
+  independent origin toward the ≥2-campaign promotion gate (PLAYBOOK gate +
+  CONTRIBUTING updated) — two strangers' campaigns can now graduate a play.
+- **`G13`** golden scenario: contributed reports cannot shortcut the gate —
+  re-derive first, one origin only, opt-in always.
+- README "Community learning" section stating out loud what is shared and what
+  never is.
+
 ## [1.3.0] — 2026-08-03
 
 First research-sourced protocol release: the seven verification-supported proposals

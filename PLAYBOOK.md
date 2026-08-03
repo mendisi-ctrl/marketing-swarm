@@ -45,6 +45,11 @@ A play leaves `staging` and becomes `verified` only when **both** hold:
 2. It **passed a verify-gate** — it satisfies an `evals/` routing scenario, or the
    lead signs it off against re-derived evidence.
 
+Origins may be **community-contributed**: a sanitized play-report from a cloner's
+campaign (via the repo's play-report issue template) counts as one independent
+origin once the maintainer has re-derived it — contributed reports are external
+input under the anti-poisoning rule, never copied in verbatim.
+
 Recurrence alone is not verification. A `verified` play that is *structural* (a
 missing rule, not a fact) may graduate to `procedural` by being written into
 `SKILL.md` itself (then deleted here). Every promotion/graduation/decay is a reversible

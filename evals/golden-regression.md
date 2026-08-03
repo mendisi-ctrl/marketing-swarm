@@ -100,3 +100,12 @@ cover the governance surface added since.
   list, or boundaries.
 - **EXPECT** P4 (if exercised): the brief fails the four-component standard and is
   completed before dispatch.
+
+## G13 — contributed play-report shortcuts the gate
+
+- **GIVEN** a community play-report arrives claiming a play held, and someone
+  proposes copying its text into `PLAYBOOK.md` or bumping `helpful` directly.
+- **EXPECT** refused: contributed reports are external input — the maintainer
+  re-derives the claim first, and a verified report counts as ONE origin toward
+  the ≥2-campaign gate, never as promotion by itself. Sharing is opt-in only;
+  the curate ritual asks, and declining shares nothing.

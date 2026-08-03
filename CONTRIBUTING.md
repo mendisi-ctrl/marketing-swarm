@@ -102,6 +102,15 @@ These aren't style preferences — they're the invariants the protocol relies on
 verify-gate (an `evals/` scenario or lead sign-off). If you're proposing a structural
 change to the protocol, back it with an `evals/` scenario rather than asserting it.
 
+**Ran a campaign with your clone? Contribute a play report instead of a PR.** Open a
+[play-report issue](.github/ISSUE_TEMPLATE/play-report.md): the play (existing id or
+proposed procedural text), a held/failed/neutral verdict, and a one-line sanitized
+context. Never include campaign names, client facts, performance numbers, or
+personal data — plays are procedural by design, so there is nothing confidential to
+share. Contribution is strictly opt-in (the curate ritual asks; declining shares
+nothing) and each verified report counts as one independent origin toward the
+≥2-campaign promotion gate.
+
 ## Testing a change
 
 - **Consistency + Tier-1:** run the snippets above; the `example/` campaign is a live

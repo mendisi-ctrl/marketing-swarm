@@ -121,6 +121,26 @@ Kill-switches, strongest first:
 - Two consecutive red check-runs freeze the loop (`loop/state/FROZEN`); delete the
   marker to unfreeze.
 
+## Community learning (opt-in, no telemetry)
+
+The skill gets better when *your* campaigns confirm or refute its plays — and it
+does this without ever seeing your campaigns. After a run, the curate ritual asks
+once whether to share a **play report** upstream (an
+[issue](.github/ISSUE_TEMPLATE/play-report.md): the procedural play, a
+held/failed/neutral verdict, a one-line sanitized context). Decline and nothing
+leaves your machine — there is no telemetry, no phone-home, nothing implicit.
+
+**What is shared** (only if you say yes): parameterised play text ("when X → do
+Y"), a verdict, a context line like "an independent B2B launch".
+**What is never shared**: campaign names, client facts, performance numbers,
+unreleased-product details, personal data, or any deliverable content — plays are
+procedural by design, so there is nothing confidential in one.
+
+Each verified report counts as one independent origin toward the playbook's
+≥2-campaign promotion gate, so two strangers' campaigns can graduate a play no
+single user could. Contributed reports are treated as external input: the
+maintainer re-derives every claim before it touches `PLAYBOOK.md`.
+
 ## Install
 
 Clone directly into your Claude Code skills directory:

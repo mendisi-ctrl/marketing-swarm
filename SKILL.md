@@ -1,6 +1,6 @@
 ---
 name: marketing-swarm
-version: 1.3.0
+version: 1.4.0
 description: |
   Multi-agent marketing-team operations protocol for autonomous campaign sessions:
   a CMO lead session that runs council-reviewed campaign planning, persistent
@@ -515,6 +515,16 @@ The swarm learns across campaigns, not just within one. Two halves:
      alone when a play is the only cover for a rare campaign archetype.
   6. **Log** every promote/graduate/decay to [`LEARNING-LOG.md`](LEARNING-LOG.md)
      with its commit SHA.
+  7. **Contribute (opt-in, clones only)** — if this repo is a clone of the
+     upstream skill, ask the owner ONCE per curate ritual: "share the sanitized
+     play(s) from this run upstream?" Yes → open a play-report issue on the
+     upstream repo (template: `.github/ISSUE_TEMPLATE/play-report.md`) with the
+     procedural play text, a held/failed/neutral verdict, and a one-line
+     sanitized context — never campaign names, numbers, claims, client facts, or
+     personal data. No → nothing leaves the machine; there is no telemetry.
+     Upstream, a verified contributed report counts as one independent origin
+     toward the ≥2-campaign promotion gate (external input — the maintainer
+     re-derives it under the anti-poisoning rules before it touches anything).
 
   Two structural invariants behind the ritual: campaign ledgers are **immutable
   episodic logs** — never edited after run-end; `PLAYBOOK.md` is the single
