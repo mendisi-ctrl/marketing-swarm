@@ -141,13 +141,25 @@ mkdir -p "$(dirname "$LOG")"
 
   # ── headless research session (C12: no Bash in the allowlist) ──
   echo "→ headless research session (sonnet, budget \$5.00)"
+  CLAUDE_EXIT=0
   (cd "$REPO" && "$CLAUDE_BIN" -p "$PROMPT" \
       --model sonnet \
       --permission-mode acceptEdits \
       --allowedTools "WebSearch WebFetch Read Write Edit Glob Grep" \
       --max-budget-usd 5.00 \
-      --output-format text) \
-    || echo "! claude exited non-zero (continuing to content gate)"
+      --output-format text) || CLAUDE_EXIT=$?
+
+  if [[ "$CLAUDE_EXIT" -ne 0 ]]; then
+    # A dead headless session (expired OAuth, CLI breakage) is INFRA, not a
+    # "quiet week" — proven live 2026-08-03 when expired auth read as
+    # green-no-changes. Discard any partial writes so next week's dirty-tree
+    # gate doesn't skip forever, notify loudly, don't touch the red counter.
+    echo "! infra: headless session failed (exit ${CLAUDE_EXIT}) — likely auth; run 'claude login'"
+    git -C "$REPO" reset --hard "$PRE_SHA" >/dev/null 2>&1
+    git -C "$REPO" clean -fd -- research/ >/dev/null 2>&1
+    notify "Research loop: headless claude failed (auth?) — run 'claude login'"
+    exit 0
+  fi
 
   # ── CONTENT gate ──
   if bash "$REPO/loop/checks.sh" "$REPO"; then
