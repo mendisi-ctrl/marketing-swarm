@@ -101,3 +101,52 @@ Updates are incremental deltas, never a monolithic rewrite.
 - **status:** staging
 - **origins:** building the marketing-swarm skill *(1 of ≥2)*
 - **first-seen:** 2026-06-22 · **last-seen:** 2026-06-22
+
+### P3 — anonymize and axis-rank peer review; keep ranking and synthesis separate
+
+- **tags+archetype:** `#peer-review #best-of-n` · campaign / quality
+- **play:** When Phase 2.5 peer cross-review or best-of-N adjudication runs, strip
+  author identity from deliverables before reviewers see them, have peers rank on
+  defined axes (accuracy, on-brief insight) instead of free-form critique, and keep
+  roles split: peers rank, the CMO synthesizes as chairman.
+- **trigger/symptom:** reviewers anchor on who wrote a draft rather than what it
+  says; free-form critiques converge on the same few notes; best-of-N picks collapse
+  toward one model's house style.
+- **verified root cause:** identity and unstructured critique bias ranking;
+  same-model self-review collapses onto the same ideas — heterogeneity (different
+  model families; persona briefs as an UNVERIFIED fallback extrapolation) is the
+  entropy source.
+- **the play/rule:** anonymize → axis-rank → chairman synthesis, with genuinely
+  heterogeneous reviewers for high-stakes creative.
+- **provenance:** 2026-08-03 research digest — Karpathy llm-council protocol +
+  Dwarkesh interview (research-sourced; lead-approved in interactive curate session).
+- **helpful:** 0 · **harmful:** 0
+- **status:** staging
+- **origins:** research-sourced *(0 of ≥2 campaigns — must recur in ≥2 independent
+  campaigns AND pass a verify-gate before promotion)*
+- **first-seen:** 2026-08-03 · **last-seen:** 2026-08-03
+
+### P4 — four-component briefs; schema-validate every shared-artifact handoff
+
+- **tags+archetype:** `#delegation #handoff` · campaign / reliability
+- **play:** When delegating any subagent task, make the brief self-contained with
+  four mandatory components — objective, output format, tools/sources, task
+  boundaries — and end every agent's turn with a written handoff summary to the team
+  board. When a shared artifact (message house, brand lock) crosses a handoff,
+  validate it against a versioned schema as a Tier-1 check.
+- **trigger/symptom:** an agent returns work in the wrong shape or scope; a
+  downstream deliverable silently diverges from the message house after an
+  upstream edit nobody re-validated.
+- **verified root cause:** subagents are stateless and briefs under-specify; schema
+  drift fails silently and prose-reading Tier-2 reviewers won't catch structural
+  divergence.
+- **the play/rule:** brief = objective + format + tools/sources + boundaries;
+  handoff = board summary + versioned-schema Tier-1 validation.
+- **provenance:** 2026-08-03 research digest — Anthropic multi-agent research
+  system, Improvado schema-drift case, context-amnesia protocol (research-sourced;
+  lead-approved in interactive curate session).
+- **helpful:** 0 · **harmful:** 0
+- **status:** staging
+- **origins:** research-sourced *(0 of ≥2 campaigns — must recur in ≥2 independent
+  campaigns AND pass a verify-gate before promotion)*
+- **first-seen:** 2026-08-03 · **last-seen:** 2026-08-03
