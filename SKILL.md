@@ -508,9 +508,19 @@ The swarm learns across campaigns, not just within one. Two halves:
   4. **Graduate** a verified *structural* play into this `SKILL.md` (then retire it
      from the playbook).
   5. **Consolidate** — merge/dedup/decay on overflow or `harmful ≥ helpful`; keep the
-     playbook within its ~15 cap (incremental deltas, never a monolithic rewrite).
+     playbook within its ~15 cap (incremental deltas, never a monolithic rewrite —
+     whole-file rewrites cause context collapse). At retro time record a
+     helped/hurt/**neutral** verdict per play the run actually exercised, and make
+     retirement evidence-thresholded AND coverage-aware: never prune on utility
+     alone when a play is the only cover for a rare campaign archetype.
   6. **Log** every promote/graduate/decay to [`LEARNING-LOG.md`](LEARNING-LOG.md)
      with its commit SHA.
+
+  Two structural invariants behind the ritual: campaign ledgers are **immutable
+  episodic logs** — never edited after run-end; `PLAYBOOK.md` is the single
+  **mutable curated store**, with git history as its revert-to-last-known-good
+  path. And the roles stay separate: agents that *generate* lessons never *curate*
+  them — curation is this ritual, run by the lead, outside any swarm.
 
 **Enforcement (or it rots).** Bind the curate ritual to a session-end hook so it
 fires automatically instead of relying on memory — add a `Stop` hook to your Claude
