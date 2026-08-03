@@ -4,6 +4,37 @@ All notable changes to the `marketing-swarm` skill. Versions follow the parent
 `agent-swarm` convention (the doc *is* the skill; a release is a meaningful protocol
 change).
 
+## [1.3.0] — 2026-08-03
+
+First research-sourced protocol release: the seven verification-supported proposals
+from the week-0 digest (`research/digests/2026-08-03.md` §Core proposals), applied in
+a user-approved interactive curate session — the propose-only core gate working as
+designed. The three unsupported proposals (invented statistics, unsourced numeric
+rules) were rejected and remain digest-only.
+
+### Added
+- **Tamper-resistant gates** (Phase 3): Tier-1 check definitions are lead-owned and
+  read-only to deliverable agents (editing a check fails the delegation); Tier-2
+  reviewers audit for letter-not-spirit Tier-1 passes; reviewer agents hard-block
+  only after calibration against the owner's accept/reject record.
+- **Curation governance** (cross-campaign learning loop): helped/hurt/neutral
+  verdicts at retro; evidence-thresholded, coverage-aware retirement (never prune on
+  utility alone); immutable episodic ledgers vs the single mutable `PLAYBOOK.md`;
+  generator/curator role separation made explicit.
+- **Golden regression set** (`evals/golden-regression.md`): 12 scenarios (G1–G12,
+  target ~30) run report-only on any edit to `SKILL.md`/`PLAYBOOK.md`/roster;
+  `loop/RESEARCH-LOOP.md` gains a maintenance contract (quarterly audit, ~40 KB
+  `SKILL.md` size budget, versioned playbook releases).
+- **`P3`** (staging) — anonymized, axis-ranked council review with chairman
+  synthesis (llm-council pattern). **`P4`** (staging) — four-component delegation
+  briefs + schema-validated shared-artifact handoffs. Both research-sourced: the
+  ≥2-campaign promotion gate still applies.
+
+### Noted
+- The two research-layer proposals (measurement triangulation, 2026 channel
+  updates) were already fully reflected in `research/CURRENT-PRACTICES.md` by the
+  week-0 distillation — recorded in `LEARNING-LOG.md`, no further edit needed.
+
 ## [1.2.0] — 2026-08-03
 
 ### Added

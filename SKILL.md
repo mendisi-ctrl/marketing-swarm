@@ -1,6 +1,6 @@
 ---
 name: marketing-swarm
-version: 1.2.0
+version: 1.3.0
 description: |
   Multi-agent marketing-team operations protocol for autonomous campaign sessions:
   a CMO lead session that runs council-reviewed campaign planning, persistent
