@@ -121,6 +121,12 @@ mkdir -p "$(dirname "$LOG")"
     exit 0
   fi
   mkdir -p "$REPO/loop/state"
+  # Dirty tree = human WIP (this repo is hand-edited); running would reset it
+  # away and miscount as content-red (verifier blocker). Infra-skip instead.
+  if git -C "$REPO" status --porcelain | grep -q .; then
+    echo "! infra: dirty tree (human WIP present) — skipping this run"
+    exit 0
+  fi
   if ! git -C "$REPO" pull --ff-only >/dev/null 2>&1; then
     echo "! infra: git pull --ff-only failed (diverged tree or offline)"
     exit 0
@@ -151,7 +157,14 @@ mkdir -p "$(dirname "$LOG")"
       [[ -z "$line" ]] && continue
       p="${line:3}"
       p="${p#\"}"                                  # git quotes odd paths
-      [[ "$p" == *" -> "* ]] && p="${p##* -> }"    # rename: check destination
+      if [[ "$p" == *" -> "* ]]; then              # rename: check BOTH sides —
+        src="${p%% -> *}"                          # a research/-bound rename of
+        case "$src" in                             # a core file is still theft
+          research/*) ;;
+          *) echo "✗ fence violation (rename source): $src"; VIOLATION=1 ;;
+        esac
+        p="${p##* -> }"
+      fi
       case "$p" in
         research/*) ;;
         *) echo "✗ fence violation: $p"; VIOLATION=1 ;;

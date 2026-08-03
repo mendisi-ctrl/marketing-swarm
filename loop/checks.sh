@@ -20,6 +20,7 @@ if [[ ! -f SKILL.md ]]; then
 else
   [[ "$(head -n 1 SKILL.md)" == "---" ]] || fail "SKILL.md does not start with ---"
   grep -qF 'name: marketing-swarm' SKILL.md || fail "SKILL.md frontmatter missing 'name: marketing-swarm'"
+  grep -q '^version: ' SKILL.md || fail "SKILL.md frontmatter missing a 'version:' line"
 
   HEADINGS=(
     '# Marketing Swarm — autonomous multi-agent campaign operations'
@@ -55,11 +56,12 @@ else
     || fail "$CP first line missing advisory header (C5)"
   cplines="$(($(wc -l < "$CP")))"   # $(( )) strips BSD wc's padding
   [[ "$cplines" -le 200 ]] || fail "$CP is $cplines lines (cap 200)"
-  # Claim bullets need >=1 markdown http link; header comment block is exempt.
+  # Claim bullets need >=1 markdown http link; ONLY the leading header comment
+  # block (opening at line 1) is exempt — a mid-file "<!--" must not disable
+  # the gate (verifier blocker: stray comment token exempted everything after).
   uncited="$(awk '
-    /<!--/ { inc = 1 }
-    inc && /-->/ { inc = 0; next }
-    inc { next }
+    NR == 1 && /^<!--/ { inc = 1 }
+    inc { if (/-->/) inc = 0; next }
     /^- / && !/\]\(http/ { c++ }
     END { print c + 0 }
   ' "$CP")"

@@ -61,7 +61,8 @@ tells you the concrete date and path — use exactly that path).
   with the newer source.
 - End with a `## Core proposals` section: any suggested improvement to
   SKILL.md, PLAYBOOK.md, or the agent templates lands here as a PROPOSED
-  diff in a ```diff fenced block, with cited sources — never applied by this
+  change — a ```diff fenced block or a precise declarative change description
+  naming the target file/section — with cited sources; never applied by this
   loop. The human lead reviews and applies (or rejects) proposals manually.
   Nothing to propose → write `None this week.`
 
