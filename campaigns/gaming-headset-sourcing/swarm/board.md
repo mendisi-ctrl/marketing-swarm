@@ -30,9 +30,9 @@ heterogeneous verifier rather than a sixth finder.
 ## Status
 | Agent | Status |
 |-------|--------|
-| R1 | launched |
-| R2 | launched |
-| R3 | launched |
-| R4 | launched |
-| R5 | launched |
-| V1 | launched |
+| R1 | complete — blocked on egress, returned 15 pre-screened candidates |
+| R2 | complete — blocked on egress, returned 14 candidates, 0 verified |
+| R3 | complete — blocked on egress, returned 12 candidates, 0 verified |
+| R4 | complete — confirmed zero sub-GBP75 ANC across 12 brands |
+| R5 | complete — blocked on egress, returned Tier-2 spec screen |
+| V1 | complete — overruled R4 on BlackShark V2 X mic |
