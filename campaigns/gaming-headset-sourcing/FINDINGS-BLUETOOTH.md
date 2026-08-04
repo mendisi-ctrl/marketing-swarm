@@ -136,6 +136,65 @@ agents. Stealth 500 at £55.99 and £79.99. These are sale-vs-list spreads, not
 contradictions — but they mean the £75 line is a timing question, not a fixed fact.
 The **Stealth 500 Xbox SKU sits at £79.99 and breaches budget — buy the PC/PS SKU.**
 
+## Tier 2 — used / refurbished. **This is where the brief becomes answerable.**
+
+New, the spec is close to unsatisfiable. Used, **three separate headsets with genuine
+earcup ANC + Bluetooth + a proper boom mic + over-ear cups are sitting on CeX UK
+simultaneously.** All UK-dispatched, graded, 24-month cover, store collection.
+
+### The three that pass everything — real ANC included
+
+| # | Model | Connectivity | Mic | Noise | Est. £ | Link |
+|---|-------|--------------|-----|-------|--------|------|
+| 1 | **EPOS H3PRO Hybrid** ★ | BT + 2.4GHz dual | **Detachable, magnetic quick-connect** | **True ANC** | 55–85 | [CeX Gr.A](https://uk.webuy.com/product-detail/?id=5714708006930A) · [Gr.B](https://uk.webuy.com/product-detail/?id=5714708006930B) |
+| 2 | **JBL Quantum 810** | BT 5.2 + 2.4GHz | Flip-up boom | **True ANC** | 60–90 | [CeX Gr.A](https://uk.webuy.com/product-detail/?id=050036389679A) · [Gr.B](https://uk.webuy.com/product-detail/?id=050036389679B) |
+| 3 | **Sony INZONE H9** | BT + 2.4GHz **simultaneous** | Retractable boom | **True ANC** | 70–100 ⚠ | [CeX Gr.B](https://uk.webuy.com/product-detail/?id=4548736133365B) |
+
+The H3PRO Hybrid is the standout: £279 MSRP, discontinued so this is the price floor,
+and it passes every constraint with the *best* variant of each — real ANC, a
+genuinely detachable boom, dual-mode Bluetooth. EPOS quotes separate battery figures
+with ANC on (19h dongle / 22h BT), which only makes sense for real cancellation.
+
+### PNI fallbacks — deeper stock, more likely to actually be buyable
+
+| # | Model | Connectivity | Mic | Est. £ | Link |
+|---|-------|--------------|-----|--------|------|
+| 4 | SteelSeries Arctis Nova 7 / 7P / 7X / Gen 2 | BT + 2.4GHz **simultaneous** | Retractable ClearCast | 45–75 | [Nova 7 Gr.A](https://uk.webuy.com/product-detail/?id=5707119041294A) · [Gr.B](https://uk.webuy.com/product-detail/?id=5707119041294B) · [Gen 2 Gr.A](https://uk.webuy.com/product-detail/?id=5707119065597A) · [7P Gr.A](https://uk.webuy.com/product-detail/?id=5707119041317A) · [7X Gr.B](https://uk.webuy.com/product-detail/?id=810052986739B) |
+| 5 | Razer Barracuda X **2022** | BT + 2.4GHz SmartSwitch | **Detachable** | 35–60 | [CeX Black Gr.B](https://uk.webuy.com/product-detail/?id=8886419379850B) · [Quartz Gr.A](https://uk.webuy.com/product-detail/?id=8886419379898A) |
+| 6 | Turtle Beach Stealth 700 Gen 2 / MAX / Gen 3 | BT + 2.4GHz | Flip-to-mute | 40–70 | [Gen2 MAX Gr.B](https://uk.webuy.com/product-detail/?id=731855037919B) · [Gen2 Xbox](https://uk.webuy.com/product-detail/?id=0731855027804) · [Gen3](https://uk.webuy.com/product-detail/?id=731855021055) |
+| 7 | Xbox Wireless Headset 2021 / 2024 | **BT** + Xbox Wireless | Bendable boom, flips to mute | 30–50 | [2021](https://uk.webuy.com/product-detail/?id=889842615326) · [2024 (BT 5.3)](https://uk.webuy.com/product-detail/?id=0196388135868) |
+| 8 | EPOS H3 Hybrid ⚠ see below | BT + dongle | Detachable lift-to-mute | — | [CeX](https://uk.webuy.com/product-detail/?id=5714708006923B) |
+| 9 | Razer Barracuda X 2022 — refurb, 12mo warranty | BT + 2.4GHz | **Detachable** | — | [Back Market UK](https://www.backmarket.co.uk/en-gb/l/wireless-gaming-headset/def14d38-094d-44ee-aac8-eca1c4eefef8) |
+| 10 | Corsair HS55 Wireless Core — refurb | BT + 2.4GHz Slipstream | Flip-to-mute | — | [Back Market UK](https://www.backmarket.co.uk/en-gb/l/corsair-headset/c1817fa1-a34f-4a8f-bc22-a23935c7b3f5) |
+| 11 | EPOS H3PRO Hybrid — marketplace | BT + 2.4GHz | **Detachable** | — | [eBay UK](https://www.ebay.co.uk/itm/225679057976) |
+| 12 | SteelSeries Arctis Nova 7 — marketplace | BT + 2.4GHz | Retractable | — | [eBay UK](https://www.ebay.co.uk/shop/arctis-nova-7-wireless?_nkw=arctis+nova+7+wireless) |
+
+⚠ **EPOS H3 Hybrid title trap:** CeX titles SKU `5714708006923B` as *"H3 Hybrid **Wired**"*.
+The H3 **Hybrid** is BT + dongle; the plain **H3** (`840064406895A/B`) is **wired-only
+and fails**. Confirm on-page which one is in the box.
+
+**Search pages — single SKUs sell out:**
+[CeX PC headsets](https://uk.webuy.com/search/?categoryIds=1083&categoryName=pc-headsets) ·
+[Back Market wireless gaming](https://www.backmarket.co.uk/en-gb/l/wireless-gaming-headset/def14d38-094d-44ee-aac8-eca1c4eefef8)
+
+### Sources that yielded nothing, checked and reported honestly
+**Music Magpie** — catalogue is Sony XM4 / Beats, all boom-less. **GAME pre-owned** —
+programme covers games and consoles only. **Currys refurb** — consumer headphones, no
+boom mics. **Amazon Renewed** — every result the index returned was amazon**.com**,
+not .co.uk; sourcing from there makes it a shipped-from-abroad row with US-plug
+dongles and customs exposure. **No case was found where going abroad beat a CeX row**
+on price or spec, so the non-UK relaxation was not worth taking.
+
+## Corrections to this brief's own hunt-list
+
+Two models the lead named as Tier 2 targets are spec misses, caught by the finder:
+- **Corsair Virtuoso RGB Wireless SE has no Bluetooth** — it is Slipstream 2.4GHz +
+  USB + 3.5mm. Only the **XT** added BT. On CeX as `843591019200C` — a trap.
+- **Razer Barracuda Pro fails the mic requirement** — hybrid ANC and BT, but
+  integrated beamforming mics, no boom.
+Also **Corsair HS80 RGB Wireless** is Slipstream-only (only **HS80 MAX** has BT), and
+**SteelSeries Arctis 7P+** is dongle-only.
+
 ## Rejected
 
 **Dongle-only, no Bluetooth:** Razer Barracuda X **2021** · SteelSeries Arctis Nova 4

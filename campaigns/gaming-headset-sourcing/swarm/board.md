@@ -35,7 +35,7 @@ heterogeneous verifier rather than a sixth finder.
 | R3 | complete — blocked on egress, returned 12 candidates, 0 verified |
 | R4 | complete — confirmed zero sub-GBP75 ANC across 12 brands |
 | R5 | complete — blocked on egress, returned Tier-2 spec screen |
-| V1 | complete — overruled R4 on BlackShark V2 X mic |
+| V1 | complete — overruled R4 on BlackShark V2 X mic; wave 2: A2DP/HFP protocol finding |
 
 ## Wave 2 — Bluetooth requirement added
 
@@ -59,3 +59,15 @@ only, V1 works manufacturer specs and touches no retail page.
 8. A built-in beamforming mic with no boom fails C3, however good the ANC is.
 9. Where known, note whether the BT link degrades to HFP/HSP when the boom mic is
    live (the telephone-quality-audio penalty).
+
+## Wave 2 outcome
+| Agent | Result |
+|-------|--------|
+| V1 | Re-derived ANC answer; found the A2DP/HFP protocol constraint; self-corrected a Barracuda X vs Barracuda conflation |
+| R4 | Confirmed zero sub-£75 BT+ANC+boom across 13 brands; found the Edifier "ANC mic" wording trap |
+| R6 | 6 qualifying rows with live URLs; documented prose layer returning £139.99 and £49.95 for the same product |
+| R7 | Found the Barracuda X two-generation SKU trap; settled connectivity from Scan URL slugs |
+| R8 | **Found three true-ANC full passes on CeX**; corrected two errors in the lead's own hunt-list |
+
+Metric vs baseline: Tier 1 target ≥10 → **13 rows**. Tier 2 target ≥10 → **12 rows**,
+three of which satisfy the *unrelaxed* spec including real ANC.
