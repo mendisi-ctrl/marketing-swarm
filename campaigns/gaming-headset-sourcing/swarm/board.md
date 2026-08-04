@@ -36,3 +36,26 @@ heterogeneous verifier rather than a sixth finder.
 | R4 | complete — confirmed zero sub-GBP75 ANC across 12 brands |
 | R5 | complete — blocked on egress, returned Tier-2 spec screen |
 | V1 | complete — overruled R4 on BlackShark V2 X mic |
+
+## Wave 2 — Bluetooth requirement added
+
+C0 (Bluetooth wireless) added mid-run. V1 and R4 resumed from transcript rather
+than relaunched, so they carry wave-1 context; R6/R7/R8 are fresh finders.
+
+| Agent | Seat | Owns (sources) | Status |
+|-------|------|----------------|--------|
+| V1 | Analytics & Ops (verifier) | Manufacturer specs — re-deriving the ANC answer under battery power, plus the 2.4GHz-vs-BT split | resumed |
+| R4 | Product marketing | Brand-direct UK stores + Edifier HECATE (newly assigned) | resumed |
+| R6 | Competitive analyst | Amazon UK, Argos, Currys, John Lewis, AO | launched |
+| R7 | Competitive analyst | GAME, Very, Box, Scan, Overclockers, Ebuyer, CCL, Novatech, AWD-IT, Laptops Direct | launched |
+| R8 | Competitive analyst | Used/refurb/open-box + non-UK dispatch | launched |
+
+Disjointness holds: R6/R7/R8 partition retail with no overlap, R4 is brand-direct
+only, V1 works manufacturer specs and touches no retail page.
+
+## Wave 2 additions to the definition-of-done
+7. Every row states **connectivity explicitly** — Bluetooth, 2.4GHz dongle, or both
+   — sourced from a spec table, not a marketing bullet. Dongle-only fails C0.
+8. A built-in beamforming mic with no boom fails C3, however good the ANC is.
+9. Where known, note whether the BT link degrades to HFP/HSP when the boom mic is
+   live (the telephone-quality-audio penalty).
